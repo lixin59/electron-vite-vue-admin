@@ -15,6 +15,7 @@ export default defineConfig(configEnv => {
   const isServe = configEnv.command === 'serve';
   const isBuild = configEnv.command === 'build';
   const sourcemap = isServe || Boolean(process.env.VSCODE_DEBUG);
+  const dependencies: Object = 'dependencies' in pkg ? pkg.dependencies : Object.create({});
 
   return {
     resolve: {
@@ -44,7 +45,7 @@ export default defineConfig(configEnv => {
               minify: isBuild,
               outDir: 'dist-electron/main',
               rollupOptions: {
-                external: Object.keys('dependencies' in pkg ? pkg.dependencies : {})
+                external: Object.keys(dependencies)
               }
             }
           }
@@ -62,7 +63,7 @@ export default defineConfig(configEnv => {
               minify: isBuild,
               outDir: 'dist-electron/preload',
               rollupOptions: {
-                external: Object.keys('dependencies' in pkg ? pkg.dependencies : {})
+                external: Object.keys(dependencies)
               }
             }
           }
