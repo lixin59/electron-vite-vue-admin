@@ -1,12 +1,12 @@
 {
   "name": "electron-vite-vue-admin",
-  "version": "0.9.9",
+  "version": "1.0.0-rc.0",
   "main": "dist-electron/main/index.js",
   "description": "一个基于Vue3、Vite3、TypeScript、NaiveUI and UnoCSS的清新优雅的中后台模版electron版本。",
   "author": {
     "name": "linxin59",
-		"email": "14533287107@qq.com",
-		"url": "https://github.com/lixin59/electron-vite-vue-admin"
+    "email": "14533287107@qq.com",
+    "url": "https://github.com/lixin59/electron-vite-vue-admin"
   },
   "license": "MIT",
   "repository": {
